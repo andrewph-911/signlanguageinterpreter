@@ -11,7 +11,7 @@ classifier = Classifier("Model/keras_model.h5", "Model/labels.txt")
 offset = 20
 imgSize = 300
 
-labels = ["T", "B"]
+labels = ["B", "i", "T"]
 # labels = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14",
 #           "15","16","17","18","19","20","21","22","23","24","25","26","27",
 #           "28","29"]
@@ -55,7 +55,7 @@ while True:
         cv2.rectangle(img, (x - offset, y - offset),
                       (x + w + offset, y + h + offset), (255, 0, 255), 1)
 
-        # print(labels[index], 'hand 1')
+        print(labels[index])
         cv2.imshow("ImageCrop", imgCrop1)
         cv2.imshow("ImageWhite", imgWhite1)
 
@@ -94,21 +94,10 @@ while True:
             cv2.rectangle(img, (x - offset, y - offset),
                           (x + w + offset, y + h + offset), (255, 0, 255), 1)
 
+        print(labels[index])
         cv2.imshow("ImageCrop2", imgCrop2)
         cv2.imshow("ImageWhite2", imgWhite2)
 
-        def check_palindrome(my_str):
-            if len(my_str) < 1:
-                return True
-            else:
-                if my_str[0] == my_str[-1]:
-                    return check_palindrome(my_str[1:-1])
-                else:
-                    return False
-        if check_palindrome(labels[index]) == True:
-            print(labels[index])
-        else:
-            print('false')
 
     cv2.imshow("Image", imgOutput1)
     cv2.imshow("Image", imgOutput2)

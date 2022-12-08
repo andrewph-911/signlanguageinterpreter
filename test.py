@@ -1,14 +1,15 @@
-def check_palindrome(my_str):
-    if len(my_str) < 1:
-        return True
-    else:
-        if my_str[0] != my_str[-1]:
-            return check_palindrome(my_str[1:-1])
-        else:
-            return False
+from typing import List
 
-my_string = ['A','A', 'A', 'N', 'G']
-if check_palindrome(my_string[1]) != True:
-    print(my_string)
-else:
-    print(0)
+
+def check_duplicate_list(mylist):
+    if len(mylist) != len(set(mylist)):
+        return
+    else:
+        return
+
+
+l0 = [0, 1, 2]
+print(check_duplicate_list(l0))
+
+l1: list[str] = ['a', 'b', 'c', 'a']
+print(check_duplicate_list(l1))
